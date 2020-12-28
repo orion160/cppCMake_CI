@@ -34,7 +34,6 @@ jobs:
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/out/build/'
           useVcpkgToolchainFile: true
-          buildWithCMake: true
       
       - name: List files
         run: ls
@@ -71,7 +70,6 @@ jobs:
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/out/build/'
           useVcpkgToolchainFile: true
-          buildWithCMake: true
       
       - name: List files
         run: ls
