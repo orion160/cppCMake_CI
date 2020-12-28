@@ -1,9 +1,7 @@
 #include <iostream>
-
+#include <spdlog/spdlog.h>
 int main()
 {
-    std::cout << "Hello World\n";
-    int a = 10;
-    std::cout << "second\n";
+    spdlog::info("Welcome to spdlog!");
     return 0;
 }

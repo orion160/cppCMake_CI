@@ -9,4 +9,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add source to this project's executable.
+
+
 add_executable(main main.cpp)
+
+find_package(spdlog CONFIG REQUIRED)
+target_link_libraries(main PRIVATE spdlog::spdlog spdlog::spdlog_header_only)
