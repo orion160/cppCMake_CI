@@ -34,6 +34,6 @@ jobs:
       - name: List files
         run: ls
       - name: List files
-        run: ls '${{ runner.workspace }}/out/build/'
+        run: ls '${{ runner.workspace }}/out/build/x64-Debug'
       #- name: Run
         #run: '${{ runner.workspace }}/out/build/'
