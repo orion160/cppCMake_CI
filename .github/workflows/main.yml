@@ -33,3 +33,5 @@ jobs:
           buildDirectory: '${{ runner.workspace }}/out/build/'
       - name: List files
         run: ls
+      - name: List files
+        run: ls ..
