@@ -42,4 +42,4 @@ jobs:
         run: ls '${{ runner.workspace }}/out/build/x64-Debug/dev_test'
       
       - name: Run
-        run: '${{ runner.workspace }}/out/build/x64-Debug/dev_test/main.exe'
+        run: '${{ runner.workspace }}/out/build/x64-Debug/dev_test/main'
