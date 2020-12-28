@@ -30,5 +30,6 @@ jobs:
           cmakeGenerator: 'Ninja'  
           cmakeListsOrSettingsJson: 'CMakeSettingsJson'
           buildWithCMakeArgs: '-- -v'
+          buildDirectory: '${{ runner.workspace }}/out/build/'
       - name: List files
         run: ls
