@@ -34,4 +34,6 @@ jobs:
       - name: List files
         run: ls
       - name: List files
-        run: ls ..
+        run: ls '${{ runner.workspace }}/out/build/'
+      #- name: Run
+        #run: '${{ runner.workspace }}/out/build/'
