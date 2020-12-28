@@ -17,6 +17,14 @@ jobs:
       - name: get-cmake
         uses: lukka/get-cmake@v3.19.2  
       
+      - name: run-vcpkg
+        uses: lukka/run-vcpkg@v6.0
+        with:
+          setupOnly: true
+          vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+          appendedCacheKey: ${{ hashFiles( '**/vcpkg_manifest/vcpkg.json' ) }}
+          vcpkgTriplet: ${{ matrix.triplet }}
+
       - name: run-cmake
         uses: lukka/run-cmake@v3.2
         id: cmake
@@ -25,6 +33,8 @@ jobs:
           cmakeListsOrSettingsJson: 'CMakeSettingsJson'
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/out/build/'
+          useVcpkgToolchainFile: true
+          buildWithCMake: true
       
       - name: List files
         run: ls
@@ -44,6 +54,14 @@ jobs:
       - name: get-cmake
         uses: lukka/get-cmake@v3.19.2  
       
+      - name: run-vcpkg
+        uses: lukka/run-vcpkg@v6.0
+        with:
+         setupOnly: true
+         vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+         appendedCacheKey: ${{ hashFiles( '**/vcpkg_manifest/vcpkg.json' ) }}
+         vcpkgTriplet: ${{ matrix.triplet }}
+      
       - name: run-cmake
         uses: lukka/run-cmake@v3.2
         id: cmake
@@ -52,6 +70,8 @@ jobs:
           cmakeListsOrSettingsJson: 'CMakeSettingsJson'
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/out/build/'
+          useVcpkgToolchainFile: true
+          buildWithCMake: true
       
       - name: List files
         run: ls
