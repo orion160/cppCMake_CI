@@ -43,8 +43,7 @@ jobs:
       - name: run-cmake
         uses: lukka/run-cmake@v3.2
         id: cmake
-        with:
-          cmakeGenerator: 'Ninja'  
+        with: 
           cmakeListsOrSettingsJson: 'CMakeSettingsJson'
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/out/build/'
