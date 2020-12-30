@@ -48,6 +48,7 @@ jobs:
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/out/build/'
           useVcpkgToolchainFile: true
+          configurationRegexFilter: '${{ matrix.configuration }}'
       
       - name: List files
         run: ls
